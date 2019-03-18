@@ -2,14 +2,15 @@
 <!-- 轮播图 -->
 <view class='swiper'>
   <swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}">
+    <block wx:key="{{index}}" wx:for="{{imgUrls}}">
       <swiper-item>
         <image src="{{item}}" class="slide-image" />
       </swiper-item>
     </block>
   </swiper>
   <!-- 规则 -->
-  <text class='dong'>g</text>
+  <!-- <text class='dong'></text> -->
+  <image class='dong' src='https://yc199609.github.io/images/F.png' mode='aspectFit'></image>
 </view>
 <!-- 描述 -->
 <view class='desc-1'>
@@ -24,13 +25,7 @@
     <a href="#" class="mai">>> 购买</a>
   </view>
   <view class="box-wrap">
-    <text id="f" class="number">0</text>
     <text id="e" class="number">{{e}}</text>
-    <text class="point">:</text>
-    <text id="d" class="number">{{d}}</text>
-    <text id="c" class="number">{{c}}</text>
-    <text id="b" class="number">{{b}}</text>
-    <!-- <span id="a" class="number">0</span> -->
   </view>
   <!-- 按钮 -->
   <view class="btn-wrap">

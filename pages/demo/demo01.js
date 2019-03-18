@@ -1,13 +1,13 @@
 // pages/demo/demo01.js
 // var wxTimer = require('../../utils/tw.js')
 // var app = getApp();
+let timeId;
+let time1;
+let time2;
+
 Page({
   data: {
-    f: 0,
-    e: 0,
-    d: 0,
-    c: 0,
-    b: 0,
+    e: '0.000',
     operateBtn: "开始",
     imgUrls: [
       '../../asset/iphone-4.jpg',
@@ -18,7 +18,8 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    circular: true
+    circular: true,
+    num:0,
   },
   changeIndicatorDots(e) {
     this.setData({
@@ -41,12 +42,31 @@ Page({
     })
   },
   Btn: function() {
-    this.setData({
-      operateBtn: "暂停"
-    })
-    var totalSecond = 1505540080 - Date.parse(new Date()) / 1000;
-   console.log(totalSecond)
-
+    if (!timeId){
+      this.setData({
+        operateBtn: "停止"
+      })
+      time1 = new Date();
+      timeId = setInterval(function () {
+        this.setData({
+          e: ((new Date() - time1) / 1000).toFixed(3)
+        })
+      }.bind(this), 1)
+    }else{
+      clearInterval(timeId);
+      timeId = null;
+      this.setData({
+        operateBtn: "再来一局"
+      })
+      console.log(this.data.e)
+      if(this.data.e===10){
+        this.setData({
+          e: 10.001
+        })
+      }else{
+        console.log('失败')
+      }
+    }
   },
   onLoad: function(options) {
 

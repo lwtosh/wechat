@@ -33,15 +33,16 @@ swiper {
 }
 
 .dong{
-  width:1.2rem;
-  height: 1rem;
+  width:260rpx;
+  height: 180rpx;
   position: absolute;
   top: 2.5vh;
   right: 1vw;
   z-index: 999;
   -webkit-animation: roundRule 2.5s ease-in-out infinite;
-  background-image: url("http://res.beetobees.com/h5Resource/F.png")  no-repeat ;
-  background-size: 100%;
+  /* background-image: url("https://yc199609.github.io/images/F.png"); */
+  /* background-repeat: no-repeat; */
+  /* background-size: 100%; */
 }
 @keyframes roundRule {
   0%, 100% {
