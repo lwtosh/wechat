@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/demo/demo01",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FF435C",
+    "navigationBarTitleText": "挑战10S,赢手机",
+    "navigationBarTextStyle":"#fff"
+  }
+}

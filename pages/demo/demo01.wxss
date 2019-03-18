@@ -1,0 +1,162 @@
+/* pages/demo/demo01.wxss */
+
+swiper {
+  height: 250px;
+  position: relative;
+}
+
+.slide-image {
+  width: 65%;
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.desc-1 {
+  padding: 0 20px;
+}
+
+.product-item {
+  color: #404040;
+  font-size: .8rem;
+}
+
+.product-money {
+  font-size: 1.2rem;
+  color: #ff435c;
+  margin-top: 0.2rem;
+  padding-bottom: 0.4rem;
+}
+
+.mon {
+  font-size: 0.8rem;
+}
+
+.dong{
+  width:1.2rem;
+  height: 1rem;
+  position: absolute;
+  top: 2.5vh;
+  right: 1vw;
+  z-index: 999;
+  -webkit-animation: roundRule 2.5s ease-in-out infinite;
+  background-image: url("http://res.beetobees.com/h5Resource/F.png")  no-repeat ;
+  background-size: 100%;
+}
+@keyframes roundRule {
+  0%, 100% {
+    -webkit-transform: rotate(-15deg);
+}
+50% {
+    -webkit-transform: rotate(15deg);
+}
+}
+
+
+
+  .box-wrap, .btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 2vh auto;
+    color: #404040;
+  }
+  .box-wrap span {
+    margin-right: 0.8vw;
+  }
+  .box-wrap .number {
+    vertical-align: baseline;
+    padding: 2vw;
+    font-size: 2rem;
+    border-radius: 10%;
+  }
+  .box-wrap .point {
+    width: 3vw;
+    margin-top: 1rem;
+  }
+  .button-3d.button-action:active, .button-3d.button-action.active, .button-3d.button-action.is-active {
+    -webkit-box-shadow: 0 2px 0 #FF435C, 0 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 0 #FF435C, 0 3px 3px rgba(0, 0, 0, 0.2);
+  }
+  .button-3d:active, .button-3d.active, .button-3d.is-active {
+    top: 5px;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .15s;
+    transition-duration: .15s;
+    -webkit-box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);
+  }
+  .button-3d.button-action {
+    -webkit-box-shadow: 0 7px 0 #FF435C, 0 8px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 7px 0 #FF435C, 0 8px 3px rgba(0, 0, 0, 0.3);
+  }
+  .button-3d {
+    position: relative;
+    top: 0;
+    -webkit-box-shadow: 0 7px 0 #bbbbbb, 0 8px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 7px 0 #bbbbbb, 0 8px 3px rgba(0, 0, 0, 0.2);
+  }
+  .button-pill {
+    border-radius: 200px;
+  }
+  .button-action, .button-action-flat {
+    background-color: #ff435ce6;
+    border-color: #ff435ce6;
+    color: #FFF;
+  }
+  .button {
+    color: #666;
+    background-color: #EEE;
+    border-color: #EEE;
+    font-weight: 300;
+    font-size: 20px;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    padding: 0 20px;
+    margin: 0;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+  }
+  .button-action, .button-action-flat {
+    background-color: #ff435ce6;
+    border-color: #ff435ce6;
+    color: #FFF;
+  }
+.wrap-cishu{
+    color: #404040;
+    padding: .1rem .6rem;
+    font-size: .8rem;
+    background: #fff;
+    border-top: 8px solid #F5F5F5;
+    border-bottom: 8px solid #F5F5F5;
+  }
+  .left{
+    display: inline-block;
+    text-align: left;
+  }
+  .num{
+    color: #FF435C;
+  }
+   .mai{
+    float: right;
+    color: #BFBFBF;
+    text-decoration: none;
+  }
+  .mai:link{
+    color: #FF435C;
+  }
+  .mai:hover{
+    color: #FF435C;
+  }

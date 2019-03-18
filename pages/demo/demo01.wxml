@@ -1,0 +1,39 @@
+<page>
+<!-- 轮播图 -->
+<view class='swiper'>
+  <swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 规则 -->
+  <text class='dong'>g</text>
+</view>
+<!-- 描述 -->
+<view class='desc-1'>
+  <view class="product-item">Apple/苹果 iPhone XR 64GB 红色 港版 移动联通电信4G手机 双卡双待</view>
+  <view class="product-money">
+    <text class="mon">￥</text> 5918.00</view>
+</view>
+
+<!-- 倒计时 -->
+  <view class="wrap-cishu">
+    <view class="left"> 您还有 <text class="num">2</text> 次挑战机会</view>
+    <a href="#" class="mai">>> 购买</a>
+  </view>
+  <view class="box-wrap">
+    <text id="f" class="number">0</text>
+    <text id="e" class="number">{{e}}</text>
+    <text class="point">:</text>
+    <text id="d" class="number">{{d}}</text>
+    <text id="c" class="number">{{c}}</text>
+    <text id="b" class="number">{{b}}</text>
+    <!-- <span id="a" class="number">0</span> -->
+  </view>
+  <!-- 按钮 -->
+  <view class="btn-wrap">
+    <text id="operateBtn" class="button button-3d button-action button-pill" bindtap="Btn">{{operateBtn}}</text>
+  </view>
+</page>
