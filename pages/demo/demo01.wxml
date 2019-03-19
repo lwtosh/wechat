@@ -1,27 +1,68 @@
-<page>
-<!-- 轮播图 -->
-<view class='swiper'>
-  <swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:key="{{index}}" wx:for="{{imgUrls}}">
-      <swiper-item>
-        <image src="{{item}}" class="slide-image" />
-      </swiper-item>
-    </block>
-  </swiper>
-  <!-- 规则 -->
-  <!-- <text class='dong'></text> -->
-  <image class='dong' src='https://yc199609.github.io/images/F.png' mode='aspectFit'></image>
-</view>
-<!-- 描述 -->
-<view class='desc-1'>
-  <view class="product-item">Apple/苹果 iPhone XR 64GB 红色 港版 移动联通电信4G手机 双卡双待</view>
-  <view class="product-money">
-    <text class="mon">￥</text> 5918.00</view>
-</view>
+<page class="cont">
+  <!-- 轮播图 -->
+  <view class='swiper'>
+    <swiper indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:key="{{index}}" wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 规则 -->
+    <image class='dong' bindtap="onChangeShowState" src='https://yc199609.github.io/images/F.png' mode='aspectFit'></image>
+    <!-- 规则 -->
+    <view class="regPage {{showView?'show':''}}" id="regPage">
+      <view class="titl">
+        <view class="shouming">活动说明</view>
+        <view class="alow" id="alow" bindtap="conceal"></view>
+      </view>
+      <view class="desc">
+        <view class="desc-3">活动商品</view>
+        <view class="desc-2">Apple/苹果 iPhone XR 64GB 红色 港版 移动联通电信4G手机 双卡双待 </view>
+      </view>
+      <view class="desc">
+        <view class="desc-3">活动时间</view>
+        <view class="desc-2">2019年3月15日 15：08 - 2019年4月15日 15：08 </view>
+      </view>
+      <view class="desc">
+        <view class="desc-3">发奖时间</view>
+        <view class="desc-2">活动结束后5个工作日内安排发奖。</view>
+      </view>
+      <view class="desc">
+        <view class="desc-3">活动规则</view>
+        <view class="desc-2">按到10秒整可获得iPhone手机一部，成功后商家会根据收货地址发货。</view>
+        <view class="desc-2">1：邀请好友送一次机会</view>
+        <view class="desc-2">2：直接玩一元一次机会</view>
+        <view class="desc-2">3：可直接购买</view>
+      </view>
+      <view class="desc">
+        <view class="desc-3">主办单位</view>
+        <text class="desc-2">-</text>
+      </view>
+    </view>
+    <!-- 弹出框 -->
+    <view class="tankuang {{flag?'show':''}}">
+      <image class='tk-hd' src='../../asset/tankuang.png'></image>
+      <view class='tk-bd'>
+        <view class='jihui'>很遗憾挑战失败，你还有2次挑战机会！加油！！！</view>
+        <view class='frend'>邀请好友</view>
+        <view class='yaoqing'>邀请好友可获得挑战机会</view>
+        <view class='zhifu frend'>支付一元得机会卡</view>
+      </view>
+      <image class='close' src='../../asset/close.png' bindtap="onChangeHideState"></image>
+    </view>
+  </view>
+  <!-- 描述 -->
+  <view class='desc-1'>
+    <view class="product-item">Apple/苹果 iPhone XR 64GB 红色 港版 移动联通电信4G手机 双卡双待</view>
+    <view class="product-money">
+      <text class="mon">￥</text> 5918.00</view>
+  </view>
 
-<!-- 倒计时 -->
+  <!-- 倒计时 -->
   <view class="wrap-cishu">
-    <view class="left"> 您还有 <text class="num">2</text> 次挑战机会</view>
+    <view class="left"> 您还有
+      <text class="num">2</text> 次挑战机会</view>
     <a href="#" class="mai">>> 购买</a>
   </view>
   <view class="box-wrap">
@@ -31,4 +72,5 @@
   <view class="btn-wrap">
     <text id="operateBtn" class="button button-3d button-action button-pill" bindtap="Btn">{{operateBtn}}</text>
   </view>
+
 </page>
