@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "stopwatch": "../../components/stopwatch"
+  }
 }

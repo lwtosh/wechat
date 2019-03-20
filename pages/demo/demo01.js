@@ -1,14 +1,14 @@
 
-let timeId;
-let time1;
-let time2;
-
+// let timeId;
+// let time1;
+// let time2;
+const app = getApp()
 Page({
   data: {
-    e: '00:000',
     operateBtn: "开始",
+    started:false,
     showView: false,
-    flag: true,
+    flag: false,
     imgUrls: [
       '../../asset/iphone-4.jpg',
       '../../asset/ipoone1.png',
@@ -41,34 +41,53 @@ Page({
       duration: e.detail.value
     })
   },
-  Btn: function() {
-    if (!timeId) {
-      this.setData({
-        operateBtn: "停止"
-      })
-      time1 = new Date();
-      timeId = setInterval(function() {
+  stop: function () {
+    clearInterval(this._interval)
+    this.setData({
+      started: false, operateBtn: '再来一局'
+    })
+    this.selectComponent('#stopwatch').stop();
+      if (this.data.text === 10) {
         this.setData({
-          e: ((new Date() - time1) / 1000).toFixed(3)
-        })
-      }.bind(this), 1)
-    } else {
-      clearInterval(timeId);
-      timeId = null;
-      this.setData({
-        operateBtn: "再来一局"
-      })
-      console.log(this.data.e)
-      if (this.data.e === 10) {
-        this.setData({
-          e: 10.001
+         text: 10.001
         })
       } else {
         this.setData({ flag: true })
         console.log('失败')
       }
-    }
   },
+  start: function () {
+    this.setData({
+      started: true,operateBtn: '暂停'
+    })
+    this.selectComponent('#stopwatch').start()
+  },
+    // if (!timeId) {
+    //   this.setData({
+    //     operateBtn: "停止"
+    //   })
+    //   time1 = new Date();
+    //   timeId = setInterval(function() {
+    //     this.setData({
+    //       text: ((new Date() - time1) / 1000).toFixed(3)
+    //     })
+    //   }.bind(this), 1)
+    // } else {
+    //   clearInterval(timeId);
+    //   timeId = null;
+    //   this.setData({
+    //     operateBtn: "再来一局"
+    //   })
+    //   console.log(this.data.e)
+    //   if (this.data.text === 10) {
+    //     this.setData({
+    //      text: 10.001
+    //     })
+    //   } else {
+    //     this.setData({ flag: true })
+    //     console.log('失败')
+    //   }
+    
   onChangeShowState: function() {
     var that = this;
     that.setData({
@@ -87,6 +106,5 @@ Page({
   },
   onLoad: function(options) {
     showView: (options.showView == "true" ? true : false);
-    // flag: (options.flag == "true" ? true : false)
   }
 })

@@ -41,7 +41,7 @@
       </view>
     </view>
     <!-- 弹出框 -->
-    <view class="tankuang {{flag?'show':''}}">
+    <view class="tankuang" wx:if="{{flag}}">
       <image class='tk-hd' src='../../asset/tankuang.png'></image>
       <view class='tk-bd'>
         <view class='jihui'>很遗憾挑战失败，你还有2次挑战机会！加油！！！</view>
@@ -65,12 +65,11 @@
       <text class="num">2</text> 次挑战机会</view>
     <a href="#" class="mai">>> 购买</a>
   </view>
-  <view class="box-wrap">
-    <text id="e" class="number">{{e}}</text>
+  <view class='footer'>
+    <stopwatch id="stopwatch" class="stopwatch number" />
+    <view class="button" wx:if="{{!started}}" bindtap="start">{{operateBtn}}</view>
+    <view class="button" wx:if="{{started}}" bindtap="stop">{{operateBtn}}</view>
+    <!-- <view class="btn-wrap">
+    <text id="operateBtn" class="button" bindtap="Btn">{{operateBtn}}</text> -->
   </view>
-  <!-- 按钮 -->
-  <view class="btn-wrap">
-    <text id="operateBtn" class="button button-3d button-action button-pill" bindtap="Btn">{{operateBtn}}</text>
-  </view>
-
 </page>
